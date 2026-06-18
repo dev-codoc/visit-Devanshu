@@ -40,7 +40,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor dot */}
       <motion.div
-        className="fixed pointer-events-none mix-blend-multiply z-50"
+        className="fixed pointer-events-none mix-blend-multiply z-[9999]"
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
@@ -58,7 +58,7 @@ const CustomCursor = () => {
 
       {/* Outer glow ring */}
       <motion.div
-        className="fixed pointer-events-none mix-blend-multiply z-40"
+        className="fixed pointer-events-none mix-blend-multiply z-[9998]"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,

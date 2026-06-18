@@ -42,11 +42,12 @@ const Navbar = ({ onResumeClick }) => {
 
   return (
     <motion.div
-      className='w-[80%] flex items-center justify-between p-4 flex-wrap gap-4'
+      className='fixed top-0 left-0 right-0 w-full flex items-center justify-center z-40 p-4 backdrop-blur-md bg-whitesmoke border-b border-gray-300 shadow-lg'
       variants={navVariants}
       initial="hidden"
       animate="visible"
     >
+      <div className='w-[80%] flex items-center justify-between flex-wrap gap-4'>
       <motion.a
         href='mailto:dev2003.rajput@gmail.com'
         className='flex items-center space-x-7 px-4 py-2 rounded-full cursor-pointer transition duration-300'
@@ -88,6 +89,7 @@ const Navbar = ({ onResumeClick }) => {
           </motion.button>
         ))}
       </motion.div>
+      </div>
     </motion.div>
   )
 }
