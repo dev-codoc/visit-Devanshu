@@ -1,83 +1,83 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Work = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://tenor.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const projects = [
     {
       id: 1,
       title: "SymptomAI",
-      description: "AI-powered health symptom checker with modern UI and real-time suggestions",
+      description:
+        "AI-powered health symptom checker with modern UI and real-time suggestions",
       image: "/assets/ai-checker.png",
       tags: ["React", "AI", "Tailwind CSS", "Node.js"],
       color: "from-blue-50 to-cyan-50",
       accentColor: "text-blue-600",
-      link: "https://ai-powered-symptoms-checker-123.vercel.app/"
+      link: "https://ai-powered-symptoms-checker-123.vercel.app/",
     },
     {
       id: 2,
       title: "Chatz",
-      description: "Real-time chat application with dark theme and seamless messaging experience",
+      description:
+        "Real-time chat application with dark theme and seamless messaging experience",
       image: "/assets/chatz.png",
       tags: ["React", "Socket.io", "Express", "MongoDB"],
       color: "from-slate-800 to-slate-900",
       accentColor: "text-orange-400",
-      link: "https://chatz-gyef.onrender.com/"
+      link: "https://chatz-gyef.onrender.com/",
     },
     {
       id: 3,
       title: "Coming Soon",
-      description: "An innovative project that will showcase cutting-edge technologies and design patterns",
-      image: "/assets/coming-soon.png",
+      description:
+        "An innovative project that will showcase cutting-edge technologies and design patterns",
       tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
       color: "from-purple-50 to-pink-50",
       accentColor: "text-purple-600",
       link: "#",
-      isComingSoon: true
-    }
-  ]
+      isComingSoon: true,
+    },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  }
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+    },
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.5, ease: "easeOut" },
     },
     hover: {
       y: -8,
       boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
-  }
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
 
   return (
     <div className="w-full min-h-[100vh] bg-gray-100 flex flex-col justify-center py-20 px-4">
@@ -88,20 +88,38 @@ const Work = () => {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
       >
-        {/* Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <motion.h2
-            className="text-4xl md:text-4xl font-bold text-gray-900 mb-4"
-            variants={itemVariants}
-          >
-            My Work
-          </motion.h2>
-          <motion.p
-            className="text-lg md:text-xl text-gray-600"
-            variants={itemVariants}
-          >
-            Showcasing full-stack projects built with modern technologies
-          </motion.p>
+        {/* Header with GIF Background */}
+        <motion.div
+          className="text-center mb-16 relative"
+          variants={itemVariants}
+        >
+          {/* GIF Background Container */}
+          <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            {/* The actual GIF as background */}
+            <img
+              src="/assets/chromedino.gif"
+              alt="background"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark overlay so text stays readable */}
+            <div className="absolute inset-0  backdrop-blur-[1px]" />
+          </div>
+
+          {/* Heading text on top */}
+          <div className="relative z-10 py-14 px-6 text-gray-700">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-gray-700 mb-4 drop-shadow-lg"
+              variants={itemVariants}
+            >
+              My Work
+            </motion.h2>
+            <motion.p
+              className="text-lg md:text-xl drop-shadow"
+              variants={itemVariants}
+            >
+              Showcasing full-stack projects built with modern technologies
+            </motion.p>
+          </div>
         </motion.div>
 
         {/* Projects Grid */}
@@ -116,18 +134,35 @@ const Work = () => {
               variants={cardVariants}
               whileHover="hover"
             >
-              {/* Project Image Container */}
-              <motion.div
-                className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden relative`}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+              {/* Image / GIF area */}
+              {project.isComingSoon ? (
+                <motion.div
+                  className="h-48 overflow-hidden relative bg-gradient-to-br from-purple-50 to-pink-50"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                  <div
+                    className="tenor-gif-embed"
+                    data-postid="10284748528352541933"
+                    data-share-method="host"
+                    data-aspect-ratio="2.12821"
+                    data-width="100%"
+                    style={{ margin: 0 }}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden relative`}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              )}
 
               {/* Project Content */}
               <div className="p-6">
@@ -164,15 +199,8 @@ const Work = () => {
 
                 {/* CTA Button */}
                 {project.isComingSoon ? (
-                  <motion.div
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-semibold text-center opacity-60 cursor-not-allowed"
-                  >
-                    <motion.span
-                      className="block"
-                      initial={{ y: 0 }}
-                    >
-                      Coming Soon
-                    </motion.span>
+                  <motion.div className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-semibold text-center opacity-60 cursor-not-allowed">
+                    <motion.span className="block">Coming Soon</motion.span>
                   </motion.div>
                 ) : (
                   <motion.a
@@ -199,7 +227,7 @@ const Work = () => {
         </motion.div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default Work
+export default Work;
