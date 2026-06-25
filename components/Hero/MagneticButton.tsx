@@ -63,7 +63,7 @@ export default function MagneticButton({
       }}
       className={`group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 font-medium transition-all duration-300 ${
         primary
-          ? "bg-linear-to-r from-cyan-500 via-violet-500 to-pink-500 text-white shadow-[0_0_40px_rgba(139,92,246,0.45)]"
+          ? "bg-linear-to-r from-dark-900 to-dark-200 text-white backdrop-blur-xl hover:from-dark-800 hover:to-dark-100"
           : "border border-white/15 bg-white/5 text-white backdrop-blur-xl hover:bg-white/10"
       }`}
     >
@@ -78,9 +78,8 @@ export default function MagneticButton({
           duration-500
           group-hover:opacity-100
           bg-linear-to-r
-          from-cyan-400/30
-          via-violet-500/30
-          to-pink-500/30
+          from-dark-900/30
+          to-light-500/30
         "
       />
 

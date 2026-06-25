@@ -19,9 +19,7 @@ export default function ProfileImage() {
   const glowX = useTransform(springY, [-15, 15], [-20, 20]);
   const glowY = useTransform(springX, [-15, 15], [20, -20]);
 
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
     const width = rect.width;
@@ -63,9 +61,9 @@ export default function ProfileImage() {
         inset-0
         rounded-[40px]
         bg-linear-to-r
-        from-cyan-500/30
-        via-violet-500/30
-        to-pink-500/30
+        from-white/5
+via-slate-300/10
+to-white/5
         blur-3xl
       "
       />
@@ -122,9 +120,9 @@ export default function ProfileImage() {
           -inset-0.5
           rounded-[40px]
           bg-linear-to-r
-          from-cyan-500
-          via-violet-500
-          to-pink-500
+          from-white/5
+via-slate-300/10
+to-white/5
           opacity-50
         "
         />
@@ -181,13 +179,9 @@ export default function ProfileImage() {
             transform: "translateZ(60px)",
           }}
         >
-          <h2 className="text-2xl font-bold text-white">
-            Devanshu Singh
-          </h2>
+          <h2 className="text-2xl font-bold text-white">Devanshu Singh</h2>
 
-          <p className="text-sm text-zinc-400">
-            Full Stack Developer
-          </p>
+          <p className="text-sm text-zinc-400">Full Stack Developer</p>
         </div>
 
         {/* Online Badge */}
@@ -214,9 +208,7 @@ export default function ProfileImage() {
             <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
           </span>
 
-          <span className="text-xs text-white">
-            Available
-          </span>
+          <span className="text-xs text-white">Available</span>
         </div>
       </motion.div>
     </motion.div>

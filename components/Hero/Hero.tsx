@@ -22,7 +22,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 sm:px-8 lg:px-12">
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-10 sm:px-8 lg:px-12">
         <div className="grid w-full items-center gap-16 lg:grid-cols-2">
           {/* Left Side */}
           <div className="order-2 flex justify-center lg:order-1 lg:justify-start">
@@ -46,7 +46,7 @@ export default function Hero() {
           absolute
           inset-x-0
           bottom-0
-          h-40
+          h-50
           bg-linear-to-t
           from-black
           via-black/60

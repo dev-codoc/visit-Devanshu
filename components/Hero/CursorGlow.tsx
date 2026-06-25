@@ -160,9 +160,9 @@ export default function CursorGlow() {
         -translate-y-1/2
         rounded-full
         bg-linear-to-r
-        from-cyan-400/20
-        via-violet-500/20
-        to-pink-500/20
+        from-white/5
+via-slate-300/10
+to-white/5
         blur-[110px]
         mix-blend-screen
       "

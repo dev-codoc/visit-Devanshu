@@ -101,7 +101,7 @@ export default function HeroText() {
         mt-8
         text-6xl
         md:text-8xl
-        xl:text-9xl
+        xl:text-7xl
         font-black
         leading-none
         tracking-tight
@@ -110,7 +110,7 @@ export default function HeroText() {
         BUILDING
         <br />
 
-        <span className="bg-linear-to-r from-cyan-400 via-violet-500 to-pink-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-cyan-400 via-violet-500 to-pink-500 bg-clip-text ">
           DIGITAL
         </span>
 
@@ -124,7 +124,7 @@ export default function HeroText() {
       <h2
         className="
         hero-subtitle
-        mt-8
+        mt-3
         text-xl
         md:text-3xl
         font-light
@@ -133,7 +133,7 @@ export default function HeroText() {
       "
       >
         Hi, I'm{" "}
-        <span className="font-semibold text-white">
+        <span className="font-semibold italic text-white">
           Devanshu Singh
         </span>{" "}
         — a Full Stack Developer crafting AI-powered products,
@@ -146,7 +146,7 @@ export default function HeroText() {
       <p
         className="
         hero-description
-        mt-8
+        mt-3
         max-w-2xl
         text-zinc-400
         text-lg
@@ -162,7 +162,7 @@ export default function HeroText() {
 
       {/* Buttons */}
 
-      <div className="hero-buttons mt-12 flex flex-wrap gap-5 justify-center lg:justify-start">
+      <div className="hero-buttons mt-8 flex flex-wrap gap-5 justify-center lg:justify-start">
         <MagneticButton
           text="View Projects"
           primary
@@ -175,7 +175,7 @@ export default function HeroText() {
 
       {/* Stats */}
 
-      <div className="mt-16 flex flex-wrap gap-12 justify-center lg:justify-start">
+      <div className="mt-8 flex flex-wrap gap-12 justify-center lg:justify-start">
         <div>
           <h3 className="text-4xl font-bold text-white">
             10+
